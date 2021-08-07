@@ -28,7 +28,92 @@
 <link rel="stylesheet" href="assets/css/responsive.css">
 <title>Jeya-Enterprises</title>
 <link rel="icon" type="image/png" href="assets/img/logo13.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() {
+      var name = document.getElementById("name").value
+      var email = document.getElementById("email").value  
+            var subject = document.getElementById("subject").value
+    Email.send({
+          SecureToken : "7210049b-6ed6-44d5-86bb-5a8287e61575",
+      Host : "smtp.elasticemail.com",
+    Username : "mani.moorthy85@gmail.com",
+    Password : "DA54E36CA25391CCAE57E780E9025290D25D",
+      To : "hhmanimoorthy@gmail.com",
+      From : "mani.moorthy85@gmail.com",
+      Subject : subject,
+    Body :"name="+name +"\n email=" +email 
+  }).then( message => alert("Thanks for contacting Jeya Entarprises")
+  )
+  setTimeout(() =>{
+  window.location.reload(true); 
+}, 5950);
+}
+</script>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
 <body>
 
 <div class="preloader">
@@ -91,90 +176,14 @@
 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 <ul class="navbar-nav">
 <li class="nav-item"><a href="index.html" class="nav-link active"><i class="flaticon-add"></i> Home</a>
-<!-- <ul class="dropdown-menu">
-<li class="nav-item"><a href="index.html" class="nav-link active">Home Page 1</a></li>
- <li class="nav-item"><a href="index-2.html" class="nav-link">Home Page 2</a></li>
-<li class="nav-item"><a href="index-3.html" class="nav-link">Home Page 3</a></li>
-<li class="nav-item"><a href="index-4.html" class="nav-link">Home Page 4</a></li> 
-</ul> -->
+
 </li>
 <li class="nav-item"><a href="about-1.html" class="nav-link"><i class="flaticon-add"></i> About</a>
-<!-- <ul class="dropdown-menu">
-<li class="nav-item"><a href="about-1.html" class="nav-link">About Us 1</a></li>
-<li class="nav-item"><a href="about-2.html" class="nav-link">About Us 2</a></li>
-</ul> -->
 </li>
-<!-- <li class="nav-item"><a href="team-1.html" class="nav-link"><i class="flaticon-add"></i> Pages</a> -->
-<!-- <ul class="dropdown-menu">
-<li class="nav-item"><a href="#" class="nav-link">About</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a href="about-1.html" class="nav-link">About Us 1</a></li>
-<li class="nav-item"><a href="about-2.html" class="nav-link">About Us 2</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="#" class="nav-link">Team</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a href="team-1.html" class="nav-link">Team 1</a></li>
-<li class="nav-item"><a href="team-2.html" class="nav-link">Team 2</a></li>
-<li class="nav-item"><a href="team-3.html" class="nav-link">Team 3</a></li>
-<li class="nav-item"><a href="single-team.html" class="nav-link">Team Details</a></li>
-</ul>
-</li> 
-<li class="nav-item"><a href="#" class="nav-link">Shop</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a href="shop-1.html" class="nav-link">Shop Grid</a></li>
-<li class="nav-item"><a href="shop-2.html" class="nav-link">Shop With Sidebar</a></li>
-<li class="nav-item"><a href="single-shop.html" class="nav-link">Shop Details</a></li>
- <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
-<li class="nav-item"><a href="checkout.html" class="nav-link">Checkout</a></li>
-</ul>
-</li>
-<li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
-<li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
-<li class="nav-item"><a href="coming-soon.html" class="nav-link">Coming Soon</a></li>
-<li class="nav-item"><a href="404.html" class="nav-link">404 Error</a></li>
-<li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-</ul>  -->
-</li>
-<!-- <li class="nav-item"><a href="#" class="nav-link"><i class="flaticon-add"></i> Services</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a href="oil-and-gas.html" class="nav-link">Oil & Gas</a></li>
-<li class="nav-item"><a href="chemical-research.html" class="nav-link">Chemical Research</a></li>
-<li class="nav-item"><a href="agricultural-research.html" class="nav-link">Agricultural Research</a></li>
-<li class="nav-item"><a href="mechanical-civil.html" class="nav-link">Mechanical & Civil</a></li>
-<li class="nav-item"><a href="auto-motive-engineering.html" class="nav-link">Auto Motive Engineering</a></li>
-<li class="nav-item"><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-</ul>
-</li> -->
- <!-- <li class="nav-item"><a href="#" class="nav-link"><i class="flaticon-add"></i> Projects</a>
-<ul class="dropdown-menu">
-<li class="nav-item"><a href="project-1.html" class="nav-link">Project Overlay</a></li>
-<li class="nav-item"><a href="project-2.html" class="nav-link">Project Grid</a></li>
-<li class="nav-item"><a href="project-3.html" class="nav-link">Project Full Width</a></li>
-<li class="nav-item"><a href="single-project.html" class="nav-link">Project Details</a></li>
-</ul>
-</li>  -->
 <li class="nav-item"><a href="blog-1.html" class="nav-link"><i class="flaticon-add"></i> Infrastructure</a>
-<!-- <ul class="dropdown-menu">
-<li class="nav-item"><a href="blog-1.html" class="nav-link">Blog Grid</a></li>
-<li class="nav-item"><a href="blog-2.html" class="nav-link">Blog Grid 2</a></li>
-<li class="nav-item"><a href="blog-3.html" class="nav-link">Blog Right Sidebar</a></li>
-<li class="nav-item"><a href="single-blog.html" class="nav-link">Blog Details</a></li>
- </ul> -->
 </li> 
 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 </ul>
-<!-- <div class="others-option">
-<ul>
-<li>
-<span class="search-popup-icon"><i class="flaticon-search"></i></span>
-</li>
-<li>
-<a href="cart.html"><i class="flaticon-supermarket"></i><span>2</span></a>
-</li>
-</ul>
-</div> -->
 </div>
 </nav>
 </div>
@@ -258,43 +267,6 @@
 </div>
 
 
-<!-- <section class="boxes-area-two bg-black">
-<div class="container">
-<div class="row">
-<div class="col-lg-4 col-md-6">
-<div class="box">
-<div class="icon">
-<i class="flaticon-architecture-and-city"></i>
-</div>
-<h3>Manufacturing</h3>
-<p>Risus commodo maecenas accumsan lacus vel facilisis. Amet, consectetur adipiscing eiusmod tempor.</p>
-<a href="#" class="read-more">Read More</a>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="box active">
-<div class="icon">
-<i class="flaticon-clock"></i>
-</div>
-<h3>Support</h3>
-<p>Our vision is to be the best company in the manufacturing of Industrial packaging products. Being the best means providing outstanding quality, services, and values so that we make every single customer in our organization to be happy.</p>
-<a href="#" class="btn btn-primary">Contact Us</a>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-<div class="box">
-<div class="icon">
-<i class="flaticon-oil"></i>
-</div>
-<h3>Petrolium Refinery</h3>
-<p>Risus commodo maecenas accumsan lacus vel facilisis. Amet, consectetur adipiscing eiusmod tempor.</p>
-<a href="#" class="read-more">Read More</a>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
 <section class="cta-area-two ptb-100 pb-0">
     <div class="container">
     <div class="cta-content">
@@ -342,7 +314,7 @@
 <div class="row h-100 align-items-center">
 <div class="col-lg-6 col-md-12">
 <div class="about-image">
-<img src="assets/img/about1.jpg" alt="about">
+<img src="assets/images/42.jpg" alt="about">
 <span>12+ Years of Experience</span>
 </div>
 </div>
@@ -354,14 +326,7 @@
 <br>
 <p>We are constantly adapting and updating ourselves to the latest trends in terms of powder manufacturing technology. All our operations are enabled making ourselves transparent to our Exporters and suppliers on all the information they need regarding the orders and development placed with us.</p>
 <ul>
-<!-- <li><i class="flaticon-check"></i> Great Technology</li>
-<li><i class="flaticon-check"></i> Delivery On Time</li>
-<li><i class="flaticon-check"></i> Expert Engineers</li>
-<li><i class="flaticon-check"></i> Creative Architecture</li>
-<li><i class="flaticon-check"></i> Industrial Construction</li>
-<li><i class="flaticon-check"></i> 24/7 Support</li>
-</ul>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+
 <a href="about-1.html" class="btn btn-primary">More About Us</a>
 </div>
 </div>
@@ -418,544 +383,13 @@
 </div>
 <div class="col-lg-5">
 <div class="video-btn">
-<a href="https://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube"><i class="flaticon-circular"></i></a>
+<a href="#" class="popup-youtube"><i class="flaticon-circular"></i></a>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-
-<!-- <section class="services-area ptb-100">
-<div class="container">
-<div class="section-title">
-<div class="row h-100 align-items-center">
- <div class="col-lg-3 col-md-7">
-<div class="bar"></div>
-<h2>Services</h2>
-<span>How we can help you?</span>
-</div>
-<div class="col-lg-6 col-md-12">
-<p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-</div>
-<div class="col-lg-3 col-md-5 text-end">
-<a href="#" class="btn btn-primary">All Services</a>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-one.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-tank"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Oil & Gas Engineering</a></h3>
-<p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-two.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-tractor"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Agriculture Automation</a></h3>
-<p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-three.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-motor-1"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Civil Engineering</a></h3>
-<p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-four.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-bridge"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Bridge Construction</a></h3>
- <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-five.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-sports-and-competition"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Mechanical Engineering</a></h3>
-<p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-services">
-<div class="services-image">
-<img src="assets/img/service-six.jpg" alt="image">
-<div class="icon">
-<i class="flaticon-factory"></i>
-</div>
-</div>
-<div class="services-content">
-<h3><a href="#">Power & Energy</a></h3>
-<p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<a href="#" class="read-more-btn">Read More</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-<!-- <section class="how-we-work ptb-100 bg-f7f7f7">
-<div class="container">
-<div class="section-title">
-<div class="row h-100 align-items-center">
-<div class="col-lg-7 col-md-7">
-<div class="bar"></div>
-<h2>How We Work</h2>
-<span>Our Work Process</span>
-</div>
-<div class="col-lg-5 col-md-5 text-end">
-<a href="#" class="btn btn-primary">All Services</a>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4 col-md-6">
-<div class="single-work-process">
-<div class="icon">
-<img src="assets/img/planning.png" alt="planing">
-</div>
-<h3>Project Planing</h3>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consec tetur, adipisci velit sed.</p>
-<div class="arrow-img">
-<img src="assets/img/arrow.png" alt="arrow">
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-work-process">
-<div class="icon">
-<img src="assets/img/design.png" alt="planing">
-</div>
-<h3>Project Design</h3>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consec tetur, adipisci velit sed.</p>
-<div class="arrow-img">
-<img src="assets/img/arrow.png" alt="arrow">
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-<div class="single-work-process">
-<div class="icon">
-<img src="assets/img/development.png" alt="planing">
-</div>
-<h3>Project Development</h3>
-<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consec tetur, adipisci velit sed.</p>
-<div class="arrow-img">
-<img src="assets/img/arrow.png" alt="arrow">
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-<!-- <section class="cta-area-two ptb-100 pb-0">
-<div class="container">
-<div class="cta-content">
-<h2>We have 50+ years of experiances give you better results.</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-<div class="cta-inner-content">
-<div class="row">
-<div class="col-lg-4 col-md-6">
-<div class="single-cta-box">
-<div class="icon">
-<i class="flaticon-deal"></i>
-</div>
-<h3>A full service</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-<div class="single-cta-box">
-<div class="icon">
-<i class="flaticon-repair"></i>
-</div>
-<h3>Maintenance</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-<div class="single-cta-box">
-<div class="icon">
-<i class="flaticon-truck"></i>
-</div>
-<h3>Delivery</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-<!-- <section class="testimonials-area-two ptb-100">
-<div class="container">
-<div class="section-title">
-<div class="row h-100 align-items-center">
-<div class="col-lg-7 col-md-7">
-<div class="bar"></div>
-<h2>Testimonials</h2>
-<span>What client says about us</span>
-</div>
-<div class="col-lg-5 col-md-5 text-end">
-<a href="#" class="btn btn-primary">All Services</a>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="testimonials-slider owl-carousel owl-theme">
-<div class="col-lg-12">
-<div class="single-feedback">
-<div class="client-img">
-<img src="assets/img/client1.png" alt="img">
-<i class="flaticon-quote"></i>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<ul>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-</ul>
-<div class="client-info">
-<h5>John Smith</h5>
-<span>CEO at ThemeForest</span>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-feedback">
-<div class="client-img">
-<img src="assets/img/client2.png" alt="img">
-<i class="flaticon-quote"></i>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<ul>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-</ul>
-<div class="client-info">
-<h5>Elima Smith</h5>
-<span>CEO at ThemeForest</span>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-feedback">
-<div class="client-img">
-<img src="assets/img/client3.png" alt="img">
-<i class="flaticon-quote"></i>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-<ul>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-<li><i class="flaticon-star"></i></li>
-</ul>
-<div class="client-info">
-<h5>Usman Lucy</h5>
- <span>CEO at ThemeForest</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-
-<!-- <section class="team-area pb-0">
-<div class="row m-0">
-<div class="team-slider owl-carousel owl-theme">
-<div class="col-lg-12 p-0">
-<div class="team-box">
-<img src="assets/img/team-img/1.jpg" alt="image">
-<div class="team-content">
-<h3>Jason Statham</h3>
-<span>CEO & Founder</span>
-<ul>
-<li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-12 p-0">
-<div class="team-box">
-<img src="assets/img/team-img/2.jpg" alt="image">
-<div class="team-content">
-<h3>David Warner</h3>
-<span>Manager and Director</span>
-<ul>
-<li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-12 p-0">
-<div class="team-box">
-<img src="assets/img/team-img/3.jpg" alt="image">
-<div class="team-content">
-<h3>Steven Smith</h3>
-<span>Construction Engineer</span>
-<ul>
-<li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-12 p-0">
-<div class="team-box">
-<img src="assets/img/team-img/4.jpg" alt="image">
-<div class="team-content">
-<h3>Jason Statham</h3>
-<span>CEO & Founder</span>
-<ul>
-<li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-lg-12 p-0">
-<div class="team-box">
-<img src="assets/img/team-img/5.jpg" alt="image">
-<div class="team-content">
-<h3>David Warner</h3>
-<span>Manager and Director</span>
-<ul>
-<li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
-<li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-
-<!-- 
-<section class="projects-area ptb-100 bg-black">
-<div class="container">
-<div class="section-title">
-<div class="row h-100 align-items-center">
-<div class="col-lg-7 col-md-7">
-<div class="bar"></div>
-<h2>Latest Projects</h2>
-<span>We work with you, not with you</span>
-</div>
-<div class="col-lg-5 col-md-5 text-end">
-<a href="#" class="btn btn-primary">View All</a>
-</div>
-</div>
-</div>
-</div>
-<div class="row m-0">
-<div class="projects-slides owl-carousel owl-theme">
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-one.jpg" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-one.jpg" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-two.jpg" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-two.jpg" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-three.jpg" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-three.jpg" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-four.jpg" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-four.jpg" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-five.png" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-five.png" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="single-projects">
-<img src="assets/img/project-two.jpg" alt="image">
-<div class="projects-content">
-<h3><a href="#">Building Renuvation</a></h3>
-<span>Oil & Gas</span>
-</div>
-<div class="btn-box">
-<a href="assets/img/project-two.jpg" class="popup-btn"><i class="flaticon-photo-1"></i></a>
-<a href="#" class="link-btn"><i class="flaticon-chain"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="map-image"><img src="assets/img/map2.png" alt="map"></div>
-</section> -->
-
-
-<!-- <div class="partner-area ptb-100 bg-f7f7f7">
-<div class="container">
-<div class="row">
-<div class="partner-slides owl-carousel owl-theme">
-<div class="col-lg-12">
-<div class="partner-item">
-<a href="#">
-<img src="assets/img/partner1.png" alt="partner-logo">
-</a>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="partner-item">
-<a href="#">
-<img src="assets/img/partner2.png" alt="partner-logo">
-</a>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="partner-item">
- <a href="#">
-<img src="assets/img/partner3.png" alt="partner-logo">
-</a>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="partner-item">
-<a href="#">
-<img src="assets/img/partner4.png" alt="partner-logo">
-</a>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="partner-item">
-<a href="#">
-<img src="assets/img/partner5.png" alt="partner-logo">
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<section class="cta-area ptb-100 bg-image">
-<div class="container">
-<div class="cta-content">
-<h2>We have been transforming the ideas & visions into award-winning projects.</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-<a href="#" class="btn btn-primary">Get a Free Quote</a>
-</div>
-</div>
-</section> -->
 
 
 <section class="why-choose-quote ptb-100">
@@ -1012,30 +446,6 @@
 </div>
 </div>
 </div>
-<!-- <div class="col-lg-6"> -->
-<!-- <div class="quote-form">
-<h3>Get A Free Quote</h3>
-<form>
-<div class="form-group">
-<label>Name:</label>
-<input type="text" class="form-control" placeholder="Enter your name">
-</div>
-<div class="form-group">
-<label>Email:</label>
-<input type="email" class="form-control" placeholder="Enter your email">
-</div>
-<div class="form-group">
-<label>Subject:</label>
-<input type="text" class="form-control" placeholder="Enter your subject">
-</div>
-<div class="form-group">
-<label>Message:</label>
-<textarea cols="30" rows="4" class="form-control" placeholder="Your message...."></textarea>
-</div>
-<button class="btn btn-primary" type="submit">Submit Now</button>
-</form>
-</div>
-</div> -->
 </div>
 </div>
 </section>
@@ -1062,7 +472,7 @@
 <i class="flaticon-add"></i>
 Dolomite Powder
 </a>
-<p class="accordion-content show">Dolomite is Carbonate of Calcium and Magnesium â��Ca Mg (CO3)2â��. We are recognized as one of the prominent Dolomite Rock Powder Manufacturers and Suppliers in India. The Dolomite Powder is extensively used in Iron & Steel Industries due to its strength and compatibility in process of purifying Iron & Steel. Natural Dolomite Powder is of White Color and is used as Filler in many applications such as Soap & Detergent, Paints, Ceramics and many other Industries.<br>
+<p class="accordion-content">Dolomite is Carbonate of Calcium and Magnesium â��Ca Mg (CO3)2â��. We are recognized as one of the prominent Dolomite Rock Powder Manufacturers and Suppliers in India. The Dolomite Powder is extensively used in Iron & Steel Industries due to its strength and compatibility in process of purifying Iron & Steel. Natural Dolomite Powder is of White Color and is used as Filler in many applications such as Soap & Detergent, Paints, Ceramics and many other Industries.<br>
     <strong>Applications:</strong><br>
     <span> <b> > </b> Soap & Detergent</span><br>
     <span> <b> > </b>Leather Cloth Industry</span><br>
@@ -1074,7 +484,38 @@ Dolomite Powder
     <span> <b> > </b>Rubber Industry</span><br>
     <span> <b> > </b>Glass Industry</span><br>
     <!-- <span> <b> > </b> As a flux in Glass Industry and in sizing of Textile Goods</span><br> -->
-    <a href="https://wa.me/8754143303?text=Hi Jeya Enterprises chat with me to known in detail about dolomite powder" target="_blank"><span style="text-decoration: underline;">ENQUIRE HERE</span></a></p>
+   
+    <a href="https://wa.me/8754143303?text=Hi Jeya Enterprises chat with me to known in detail about dolomite powder" target="_blank"><i class="fa fa-whatsapp" style="font-size: 20px; color:#4FCE5D">&ensp;</i><span style="text-decoration: underline">ENQUIRE HERE</span></a>
+    <br>
+    <i class="fa fa-envelope" style="font-size: 20px;">&ensp;</i><span style="color:#0d6efd;text-decoration: underline" class="open-button" onclick="openForm() ">ENQUIRE HERE</span>
+<div class="form-popup form-container" id="myForm">
+  
+    <h1>Enquire</h1>
+
+    <label for="email"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+    <label for="comp"><b>Company</b></label>
+    <input type="text" placeholder="Enter Company" name="email" id="email" required>
+    <label for="manu"><b>Manufacturer</b></label>
+    <input type="text" placeholder="Enter Manufacturer" name="manufacturer" id="subject" required>
+
+    <button type="submit" class="btn" name="submit-form" id="submit" onclick="sendEmail();">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    
+</p>
 </li>
 <li class="accordion-item">
  <a class="accordion-title" href="javascript:void(0)">
@@ -1258,7 +699,7 @@ Ground Calcium Carbonate Powder
         <i class="flaticon-add"></i>
         China Clay Powder
         </a>
-        <p class="accordion-content show">Kaolin, also called china clay, soft white clay that is an essential ingredient in the manufacture of china and porcelain and is widely used in the making of paper, rubber, paint, and many other products. <br>
+        <p class="accordion-content">Kaolin, also called china clay, soft white clay that is an essential ingredient in the manufacture of china and porcelain and is widely used in the making of paper, rubber, paint, and many other products. <br>
             <strong>Applications:</strong><br>
             <span> <b> > </b>Paint</span><br>
             <span> <b> > </b>Paper</span><br>
@@ -1286,7 +727,7 @@ Ground Calcium Carbonate Powder
             <i class="flaticon-add"></i>
             Washed Clay Powder
             </a>
-            <p class="accordion-content show">
+            <p class="accordion-content">
                 Washed China Clay Powder is reckoned for its high density level, stable chemical properties and low porosity level. This soft powder contains hexagonal shaped particles (can be viewed by electron microscope) of kaolinite mineral. Available in cully calcined form, this clay based product has less impurities and it absorbs minimum amount of water. <br>
                 <strong>Applications:</strong><br>
                 <span> <b> > </b> In coating industry, Washed China Clay Powder is used to improve homogeneity of coatings.</span><br>
@@ -1306,7 +747,7 @@ Ground Calcium Carbonate Powder
                 <i class="flaticon-add"></i>
                 Feldspars Powder
                 </a>
-                <p class="accordion-content show">
+                <p class="accordion-content">
                     Feldspars are a group of rock-forming aluminium tectosilicate minerals, containing sodium, calcium, potassium or barium.The most common members of the feldspar group are the plagioclase (sodium-calcium) feldspars and the alkali (potassium-sodium) feldspars. Feldspars crystallize from magma as both intrusive and extrusive igneous rocks and are also present in many types of metamorphic rock.Rock formed almost entirely of calcic plagioclase feldspar is known as anorthosite.Feldspars are also found in many types of sedimentary rocks.<br>
                     <strong>Applications:</strong><br>
                     <span> <b> > </b>Glass</span><br>
@@ -1325,7 +766,7 @@ Ground Calcium Carbonate Powder
                     <i class="flaticon-add"></i>
                     Magnesite Powder
                     </a>
-                    <p class="accordion-content show">
+                    <p class="accordion-content">
                         Magnesite occurs as veins in and an alteration product of ultramafic rocks, serpentinite and other magnesium rich rock types in both contact and regional metamorphic terrains. These magnesites are often cryptocrystalline and contain silica in the form of opal or chert.Magnesite is also present within the regolith above ultramafic rocks as a secondary carbonate within soil and subsoil, where it is deposited as a consequence of dissolution of magnesium-bearing minerals by carbon dioxide in groundwaters.<br>
                         <strong>Applications:</strong><br>
                         <span> <b> > </b>Refactory Material</span><br>
@@ -1341,7 +782,7 @@ Ground Calcium Carbonate Powder
                         <i class="flaticon-add"></i>
                         Calcined Magnesite Powder
                         </a>
-                        <p class="accordion-content show">
+                        <p class="accordion-content">
                             Calcined magnesite is a cost effective source of chemical grade magnesium oxide – used as an alkali for acid neutralisation in the process and subsequent effluent treatment. A range of purities are available along with a choice of particle size. 90% magnesium oxide is the most cost effective grade, whereas 94% magnesium oxide introduces the lowest unwanted non reactives. Fine particle sizes are more reactive than coarse powder but can be found less easy to handle during processing.<br>
                             <strong>Applications:</strong><br>
                     <span> <b> > </b>Oxy-chloride Flooring</span><br>
@@ -1357,7 +798,7 @@ Ground Calcium Carbonate Powder
                             <i class="flaticon-add"></i>
                             Plaster of Paris Powder
                             </a>
-                            <p class="accordion-content show">
+                            <p class="accordion-content">
                                 Plaster of paris, quick-setting gypsum plaster consisting of a fine white powder (calcium sulfate hemihydrate), which hardens when moistened and allowed to dry. Known since ancient times, plaster of paris is so called because of its preparation from the abundant gypsum found near Paris.<br>
                                 <strong>Applications:</strong><br>
                                 <span> <b> > </b>Used in making casts and patterns for molds and statues</span><br>
@@ -1373,7 +814,7 @@ Ground Calcium Carbonate Powder
                                 <i class="flaticon-add"></i>
                                 Marine Gypsum Powder
                                 </a>
-                                <p class="accordion-content show">
+                                <p class="accordion-content">
                                     The marine gypsum is a by-product of solar Salt manufacturing process. Every Salt manufacturing unit will have marine gypsum deposit in tune of about 5% of their annual Salt production at various stages in various condensers. Marine Gypsum being heavier (higher in specific gravity) than Salt.<br>
                                     <strong>Applications:</strong><br>
                                     <span> <b> > </b>Wallboard</span><br>
@@ -1389,7 +830,7 @@ Ground Calcium Carbonate Powder
                                     <i class="flaticon-add"></i>
                                     Chemical Gypsum Powder
                                     </a>
-                                    <p class="accordion-content show">
+                                    <p class="accordion-content">
                                         Gypsum is the name given to a mineral categorized as calcium sulfate mineral, and its chemical formula is calcium sulfate dihydrate, CaSO4⋅ 2H2O. However, a broader definition includes all the calcium sulfates, including calcium sulfate hemihydrate, CaSO4⋅ 0.5H2O, which is known as plaster or plaster of Paris (POP).<br>
                                         <strong>Applications:</strong><br>
                                     <span> <b> > </b>Gypsum powder is mainly used in building materials such as drywall</span><br>
@@ -1402,7 +843,7 @@ Ground Calcium Carbonate Powder
                                         <i class="flaticon-add"></i>
                                         Limestone Lumps
                                         </a>
-                                        <p class="accordion-content show">
+                                        <p class="accordion-content">
                                             The Limestone lumps contains calcite mineral due to the marine organism. Limestone Powder which is made from limestone lumps. It is processed under hygienic environment condition by using latest technology.<br>
                                             <strong>Applications:</strong><br>
                                     <span> <b> > </b>Cement Manufacturing</span><br>
@@ -1419,7 +860,7 @@ Ground Calcium Carbonate Powder
                                             <i class="flaticon-add"></i>
                                             Coated Calcium Carbonate Powder
                                             </a>
-                                            <p class="accordion-content show">
+                                            <p class="accordion-content">
                                                 
                                              Activated Calcium Carbonate is produced by surface coating the Precipitated Calcium Carbonate slurry with Fatty Acids (Stearic Acid) and Titnate Coupling Agent then filtering and drying of the coated PCC slurry to produce ACC powder.<br>
                                              <strong>Applications:</strong><br>
@@ -1457,78 +898,43 @@ Ground Calcium Carbonate Powder
 <div class="row m-0">
 <div class="blog-slides owl-carousel owl-theme">
 <div class="col-lg-12">
-<div class="single-blog-post">
+<div class="single-blog-post-box">
 <div class="blog-image">
-<img src="assets/img/blog-one.jpg" alt="blog-image">
+<img src="assets/images/27.jpg" alt="blog-image">
 </div>
-<div class="blog-post-content">
-<ul>
-<li><a href="#">Building</a></li>
-<li><a href="#">News</a></li>
-</ul>
-<h3><a href="#">Which material types can you work with?</a></h3>
-<a href="#" class="read-more"><i class="flaticon-right-arrow"></i></a>
-</div>
+
  </div>
 </div>
 <div class="col-lg-12">
-<div class="single-blog-post">
+<div class="single-blog-post-box">
 <div class="blog-image">
-<img src="assets/img/blog-two.jpg" alt="blog-image">
+<img src="assets/images/49.jpg" alt="blog-image">
 </div>
-<div class="blog-post-content">
-<ul>
-<li><a href="#">Building</a></li>
-<li><a href="#">News</a></li>
-</ul>
-<h3><a href="#">Is Smart Lock required for instant apps?</a></h3>
-<a href="#" class="read-more"><i class="flaticon-right-arrow"></i></a>
-</div>
+
 </div>
 </div>
 <div class="col-lg-12">
-<div class="single-blog-post">
+<div class="single-blog-post-box">
 <div class="blog-image">
-<img src="assets/img/blog-three.jpg" alt="blog-image">
+<img src="assets/images/17.jpg" alt="blog-image">
 </div>
-<div class="blog-post-content">
-<ul>
-<li><a href="#">Building</a></li>
-<li><a href="#">News</a></li>
-</ul>
-<h3><a href="#">Can I have multiple activities in a single feature?</a></h3>
-<a href="#" class="read-more"><i class="flaticon-right-arrow"></i></a>
-</div>
+
 </div>
 </div>
 <div class="col-lg-12">
-<div class="single-blog-post">
+<div class="single-blog-post-box">
 <div class="blog-image">
-<img src="assets/img/blog-four.jpg" alt="blog-image">
+<img src="assets/images/31.jpg" alt="blog-image">
 </div>
-<div class="blog-post-content">
-<ul>
-<li><a href="#">Building</a></li>
-<li><a href="#">News</a></li>
-</ul>
-<h3><a href="#">Can I share resources between features?</a></h3>
-<a href="#" class="read-more"><i class="flaticon-right-arrow"></i></a>
-</div>
+
 </div>
 </div>
 <div class="col-lg-12">
-<div class="single-blog-post">
+<div class="single-blog-post-box">
 <div class="blog-image">
-<img src="assets/img/blog-five.jpg" alt="blog-image">
+<img src="assets/images/37.jpg" alt="blog-image">
 </div>
-<div class="blog-post-content">
-<ul>
-<li><a href="#">Building</a></li>
-<li><a href="#">News</a></li>
-</ul>
-<h3><a href="#">Which material types can you work with?</a></h3>
-<a href="#" class="read-more"><i class="flaticon-right-arrow"></i></a>
-</div>
+
 </div>
 </div>
 </div>
@@ -1664,7 +1070,7 @@ Ground Calcium Carbonate Powder
 <script src="assets/js/form-validator.min.js"></script>
 
 <script src="assets/js/contact-form-script.js"></script>
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 
