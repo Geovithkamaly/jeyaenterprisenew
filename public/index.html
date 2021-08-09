@@ -31,16 +31,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script>
+<!-- <script>
     function sendEmail() {
       var name = document.getElementById("name").value
       var email = document.getElementById("email").value  
             var subject = document.getElementById("subject").value
     Email.send({
-          SecureToken : "7210049b-6ed6-44d5-86bb-5a8287e61575",
-      Host : "smtp.elasticemail.com",
-    Username : "mani.moorthy85@gmail.com",
-    Password : "DA54E36CA25391CCAE57E780E9025290D25D",
+          SecureToken : "f4c6eba7-9131-4bda-baf9-5b3ebb60b5d5",
+    //   Host : "smtp.elasticemail.com",
+    // Username : "mani.moorthy85@gmail.com",
+    // Password : "DA54E36CA25391CCAE57E780E9025290D25D",
       To : "hhmanimoorthy@gmail.com",
       From : "mani.moorthy85@gmail.com",
       Subject : subject,
@@ -51,7 +51,7 @@
   window.location.reload(true); 
 }, 5950);
 }
-</script>
+</script> -->
 
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -489,9 +489,9 @@ Dolomite Powder
     <br>
     <i class="fa fa-envelope" style="font-size: 20px;">&ensp;</i><span style="color:#0d6efd;text-decoration: underline" class="open-button" onclick="openForm() ">ENQUIRE HERE</span>
 <div class="form-popup form-container" id="myForm">
-  
+    
     <h1>Enquire</h1>
-
+    <form action="https://formspree.io/f/mrgryayz" method="POST" target="_blank">
     <label for="email"><b>Name</b></label>
     <input type="text" placeholder="Enter Name" name="name" id="name" required>
 
@@ -500,9 +500,9 @@ Dolomite Powder
     <label for="manu"><b>Manufacturer</b></label>
     <input type="text" placeholder="Enter Manufacturer" name="manufacturer" id="subject" required>
 
-    <button type="submit" class="btn" name="submit-form" id="submit" onclick="sendEmail();">Send</button>
+    <button type="submit" class="btn" name="submit-form" id="submit">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  
+    </form>
 </div>
 
 <script>
