@@ -27,6 +27,69 @@
 <link rel="stylesheet" href="assets/css/responsive.css">
 <title>Jeya Enterprises</title>
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    
+    
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 400px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
 </head>
 <body>
 
@@ -130,9 +193,9 @@
 <div class="sidebar">
 <div class="widget service_list">
 <ul>
-<li><a href="limestonelumps.html" class="active">Lime stone lumps <i class="flaticon-right"></i></a></li>
+<li><a href="limestonelumps.html">Lime stone lumps <i class="flaticon-right"></i></a></li>
 <li><a href="chemical-research.html">Lime stone powder <i class="flaticon-right"></i></a></li>
-<li><a href="agricultural-research.html">Dolomite powder <i class="flaticon-right"></i></a></li>
+<li><a href="agricultural-research.html"  class="active">Dolomite powder <i class="flaticon-right"></i></a></li>
 <li><a href="auto-motive-engineering.html">Calcite powder<i class="flaticon-right"></i></a></li>
 <li><a href="mechanical-civil.html">Ground calcium carbonate powder <i class="flaticon-right"></i></a></li>
 <li><a href="manufacturing.html">Coated calcium carbonate powder <i class="flaticon-right"></i></a></li>
@@ -169,7 +232,7 @@
 </div>
 <div class="col-lg-8 col-md-12">
 <div class="services-details-desc">
-<h3>Oil & Gas</h3>
+<h3>Dolomite Powder</h3>
 <p>Dolomite is a Carbonate of Calcium and Magnesium. We are recognized as one of the prominent Dolomite Rock Powder Manufacturers and Suppliers in India. The Dolomite Powder is extensively used in Iron & Steel Industries due to its strength and compatibility in process of purifying Iron & Steel. Natural Dolomite Powder is White and is used as Filler in many applications such as Soap & Detergent, Paints, Ceramics, and many other industries.</p>
 <div class="services-image-slides owl-carousel owl-theme">
 <div class="item">
@@ -194,7 +257,37 @@
 <li><i class="flaticon-check"></i>Rubber Industry</li>
 <li><i class="flaticon-check"></i>Glass  Industry</li>
 </ul>
+<p>
+    <a href="https://wa.me/8754143303?text=Hi Jeya Enterprises chat with me to known in detail about dolomite powder" target="_blank"><i class="fa fa-whatsapp" style="font-size: 20px; color:#4FCE5D">&ensp;</i><span style="text-decoration: underline">ENQUIRE HERE</span></a>
+    <br>
+    <i class="fa fa-envelope" style="font-size: 20px;">&ensp;</i><span style="color:#0d6efd;text-decoration: underline" class="open-button" onclick="openForm() ">ENQUIRE HERE</span>
+<div class="form-popup form-container" id="myForm">
+    
+    <h1>Enquire</h1>
+    <form action="https://formspree.io/f/mrgryayz" method="POST" target="_blank">
+    <label for="email"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
 
+    <label for="comp"><b>Company</b></label>
+    <input type="text" placeholder="Enter Company" name="email" id="email" required>
+    <label for="manu"><b>Manufacturer</b></label>
+    <input type="text" placeholder="Enter Manufacturer" name="manufacturer" id="subject" required>
+
+    <button type="submit" class="btn" name="submit-form" id="submit">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</p>
 </div>
 </div>
 </div>
